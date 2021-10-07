@@ -1,0 +1,22 @@
+I want to push a repo from my computer to GitHub. I set the remote origin
+
+git remote add origin git@github.com:alicht/tweetanuber.git
+and then after when I try pushing to GitHub
+
+git push -u origin master
+I'm greeted with this error:
+
+ssh: connect to host github.com port 22: Operation timed out
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+How can I resolve this issue and push the repo on my local computer to GitHub?
+
+Answer
+
+I have had this same problem the solution was edit ~/.ssh/config e put this lines:
+
+Host github.com
+  Hostname ssh.github.com
+  Port 443
